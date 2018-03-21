@@ -18,7 +18,7 @@ const dialect = require('../../some-path/mysql.dialect.js');
 Specify Join Monster dialectModule in your resolver:
 
 ```
-resolve: (project, args, context, resolveInfo) => {
+resolve: (table, args, context, resolveInfo) => {
   const sequelize = require('../../../config/database');
   return joinMonster(resolveInfo, {}, sql => {
     return sequelize.query(sql).then(function(result) {
